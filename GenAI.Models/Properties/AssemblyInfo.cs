@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("GenAI.Core")]
+[assembly: AssemblyTitle("GenAI.Models")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GenAI.Core")]
+[assembly: AssemblyProduct("GenAI.Models")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bf022e9d-2dad-4eb2-9f81-9a05d20f97e8")]
+[assembly: Guid("079484ff-fd60-45d2-a927-c912f4ce78ca")]
 
 // Version information for an assembly consists of the following four values:
 //

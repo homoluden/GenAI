@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("GenAI.UI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("EPAM Systems")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("GenAI.UI")]
-[assembly: AssemblyCopyright("Copyright © EPAM Systems 2013")]
+[assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
