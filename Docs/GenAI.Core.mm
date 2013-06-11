@@ -14,8 +14,7 @@
       GenAI.Core
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <font NAME="Segoe UI" SIZE="20"/>
 <hook NAME="accessories/plugins/AutomaticLayout.properties"/>
 <node COLOR="#0033ff" CREATED="1368020396132" HGAP="36" ID="ID_937379936" MODIFIED="1370943079195" POSITION="right" TEXT="Enums" VSHIFT="42">
@@ -37,10 +36,12 @@
 <node COLOR="#990000" CREATED="1370947452669" ID="ID_497938590" MODIFIED="1370947476841" TEXT="GetEndState() : enum EndState">
 <font NAME="Segoe UI" SIZE="14"/>
 </node>
-<node COLOR="#990000" CREATED="1370947479361" ID="ID_572477457" MODIFIED="1370947654137" TEXT="UpdateState(...) : void">
+<node COLOR="#990000" CREATED="1370947479361" ID="ID_572477457" MODIFIED="1370947743500" TEXT="UpdateState(...) : void">
 <font NAME="Segoe UI" SIZE="14"/>
-<attribute_layout NAME_WIDTH="162" VALUE_WIDTH="162"/>
-<attribute NAME="" VALUE=""/>
+<attribute_layout NAME_WIDTH="175" VALUE_WIDTH="109"/>
+<attribute NAME="IEnumerable&lt;IAmVisible&gt;" VALUE="visibleObjects"/>
+<attribute NAME="IEnumerable&lt;IAmNoizy&gt;" VALUE="noizyObjects"/>
+<attribute NAME="IEnumerable&lt;IAmSmelling&gt;" VALUE="smellingObjects"/>
 </node>
 </node>
 <node COLOR="#00b439" CREATED="1368020538912" ID="ID_677006335" MODIFIED="1370943286866" TEXT="IAmNoizy">
@@ -54,6 +55,23 @@
 <node COLOR="#00b439" CREATED="1368020554966" ID="ID_1727485582" MODIFIED="1370943286866" TEXT="IAmVisible">
 <edge COLOR="#00b439" STYLE="bezier" WIDTH="thin"/>
 <icon BUILTIN="info"/>
+</node>
+</node>
+<node COLOR="#0033ff" CREATED="1368020558136" HGAP="27" ID="ID_242539062" MODIFIED="1370948000194" POSITION="right" STYLE="fork" TEXT="BaseStateMachine" VSHIFT="-13">
+<edge COLOR="#00b439" STYLE="sharp_bezier" WIDTH="8"/>
+<font NAME="Segoe UI" SIZE="18"/>
+<icon BUILTIN="info"/>
+<node COLOR="#00b439" CREATED="1370947452669" ID="ID_1109245733" MODIFIED="1370948009880" TEXT="GetEndState() : enum EndState">
+<edge STYLE="bezier" WIDTH="thin"/>
+<font NAME="Segoe UI" SIZE="16"/>
+</node>
+<node COLOR="#00b439" CREATED="1370947479361" ID="ID_103686230" MODIFIED="1370948000193" TEXT="UpdateState(...) : void">
+<edge STYLE="bezier" WIDTH="thin"/>
+<font NAME="Segoe UI" SIZE="16"/>
+<attribute_layout NAME_WIDTH="175" VALUE_WIDTH="109"/>
+<attribute NAME="IEnumerable&lt;IAmVisible&gt;" VALUE="visibleObjects"/>
+<attribute NAME="IEnumerable&lt;IAmNoizy&gt;" VALUE="noizyObjects"/>
+<attribute NAME="IEnumerable&lt;IAmSmelling&gt;" VALUE="smellingObjects"/>
 </node>
 </node>
 </node>
