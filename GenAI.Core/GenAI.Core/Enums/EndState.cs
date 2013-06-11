@@ -3,6 +3,7 @@
     public enum EndState
     {
         Idle,
+        Feed,
         AggressiveAttack,
         Flee
     }

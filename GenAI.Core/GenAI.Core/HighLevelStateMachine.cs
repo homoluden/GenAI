@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using GenAI.Core.Enums;
 using GenAI.Core.Interfaces;
 
-    public class HighLevelStateMachine : BaseStateMachine, IHaveStates
+    public class HighLevelStateMachine<T> : BaseStateMachine<T>, IHaveStates
+        where T : class, IAmAlive, IHavePosition
     {
         #region Fields
 
@@ -15,9 +16,9 @@ using GenAI.Core.Interfaces;
 
         #region Ctors
 
-        public HighLevelStateMachine()
+        public HighLevelStateMachine(T owner) : base(owner)
         {
-            _subMachine = new LowLevelStateMachine();
+            _subMachine = new LowLevelStateMachine<T>(owner);
         }
 
         #endregion
@@ -33,24 +34,5 @@ using GenAI.Core.Interfaces;
 
             _subMachine.UpdateState(visibleObjects, noizyObjects, smellingObjects);
         }
-
-        //public override void LookAt(IEnumerable<Interfaces.IAmVisible> visibleObjects)
-        //{
-        //    // TODO: Check visible objects and update corresponding internal properties here
-        //}
-
-        //public override void HearTo(IEnumerable<Interfaces.IAmNoizy> noizyObjects)
-        //{
-        //    // TODO: Check objects which make some noise and update corresponding internal properties here
-
-        //    throw new NotImplementedException();
-        //}
-
-        //public override void SmellThat(IEnumerable<Interfaces.IAmSmelling> smellingObjects)
-        //{
-        //    // TODO: Check smelling objects and update corresponding internal properties here
-
-        //    throw new NotImplementedException();
-        //}
     }
 }

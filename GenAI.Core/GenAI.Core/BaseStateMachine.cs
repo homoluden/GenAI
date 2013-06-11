@@ -8,7 +8,6 @@ using GenAI.Core.Interfaces;
 namespace GenAI.Core
 {
     using GenAI.Core.Enums;
-    using GenAI.Core.Utils;
 
     public abstract class BaseStateMachine<T> where T : class, IAmAlive, IHavePosition
     {

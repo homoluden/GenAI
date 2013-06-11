@@ -6,7 +6,8 @@
     using GenAI.Core.Enums;
     using GenAI.Core.Interfaces;
 
-    public class LowLevelStateMachine : BaseStateMachine, IHaveStates
+    public class LowLevelStateMachine<T> : BaseStateMachine<T>, IHaveStates
+        where T : class, IAmAlive, IHavePosition
     {
         #region Fields
 
@@ -17,6 +18,14 @@
         #region Properties
 
         public EndState State { get; set; }
+
+        #endregion
+
+        #region Ctors
+
+        public LowLevelStateMachine(T owner) : base(owner)
+        {
+        }
 
         #endregion
 
