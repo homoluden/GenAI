@@ -21,5 +21,16 @@ namespace GenAI.Core.Enums
         AttackGoalPriority,
         RetreatGoalPriority,
         ServeGoalPriority,
+        SeekPriority,
+        GuerrillaAttackPriority,
+        InfantryAttackPriority,
+        KamikazeAttackPriority,
+        EatClosestPriority,
+        EatBestPriority,
+        SlowRetreatPriority,
+        FleeRetreatPriority,
+        HarvestPriority,
+        ReparePriority,
+        SacrificePriority
     }
 }

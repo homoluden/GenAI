@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace GenAI.Core.Enums
 {
-    public enum AttackStrategy
+    public enum FeedStrategy
     {
         Seek,
-        Guerrilla,
-        Infantry,
-        Kamikaze
+        EatClosest,
+        EatBest
     }
 }

@@ -4,6 +4,7 @@
     {
         Idle,
         Feed,
+        AggressiveChase,
         AggressiveAttack,
         Flee
     }

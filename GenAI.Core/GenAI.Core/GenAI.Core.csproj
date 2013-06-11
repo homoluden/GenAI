@@ -42,8 +42,11 @@
     <Compile Include="BaseStateMachine.cs" />
     <Compile Include="Enums\AttackStrategy.cs" />
     <Compile Include="Enums\EndState.cs" />
+    <Compile Include="Enums\FeedStrategy.cs" />
     <Compile Include="Enums\GeneKey.cs" />
     <Compile Include="Enums\Goal.cs" />
+    <Compile Include="Enums\RetreatStrategy.cs" />
+    <Compile Include="Enums\ServeStrategy.cs" />
     <Compile Include="HighLevelStateMachine.cs" />
     <Compile Include="FeedStateMachine.cs" />
     <Compile Include="Interfaces\IAmAlive.cs" />
