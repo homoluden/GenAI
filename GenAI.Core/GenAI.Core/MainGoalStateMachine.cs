@@ -16,7 +16,7 @@ namespace GenAI.Core
 
         protected Goal _goal;
 
-        protected readonly Tuple<int, Goal>[] _goalSelectionTable;
+        protected readonly Tuple<uint, Goal>[] _goalSelectionTable;
 
         #endregion
 
@@ -25,7 +25,22 @@ namespace GenAI.Core
         public MainGoalStateMachine(T owner) : base(owner)
         {
             _goal = Goal.Feed;
-            _goalSelectionTable = new Tuple<int, Goal>[4];
+
+            _goalSelectionTable = new []
+                                    {
+                                        new Tuple<uint, Goal>(_owner.Genes[GeneKey.FeedGoalPriority], Goal.Feed),
+                                        new Tuple<uint, Goal>(_owner.Genes[GeneKey.AttackGoalPriority], Goal.Attack),
+                                        new Tuple<uint, Goal>(_owner.Genes[GeneKey.RetreatGoalPriority], Goal.Retreat),
+                                        new Tuple<uint, Goal>(_owner.Genes[GeneKey.ServeGoalPriority], Goal.Serve)
+                                    };
+            uint commulativePriority = 0;
+            
+            for (int i = 0; i < _goalSelectionTable.Length; i++)
+            {
+                commulativePriority += _goalSelectionTable[i].Item1;
+
+                _goalSelectionTable[i] = new Tuple<uint, Goal>(commulativePriority, _goalSelectionTable[i].Item2);
+            }
 
             _subMachine = new FeedStateMachine<T>(owner);
         }
@@ -34,7 +49,7 @@ namespace GenAI.Core
 
         #region Overrides
 
-        public override void UpdateState(IEnumerable<Interfaces.IAmVisible> visibleObjects, IEnumerable<Interfaces.IAmNoizy> noizyObjects, IEnumerable<Interfaces.IAmSmelling> smellingObjects)
+        public override void UpdateState(IEnumerable<IAmVisible> visibleObjects, IEnumerable<IAmNoizy> noizyObjects, IEnumerable<IAmSmelling> smellingObjects)
         {
             // TODO: Check detected objects and select main goal
             switch (_goal)
@@ -45,6 +60,12 @@ namespace GenAI.Core
                             _subMachine = new AttackStateMachine<T>(_owner);
                         }
                     break;
+                    case Goal.Retreat:
+                        // TODO: Create "Retreat" states machine
+                        break;
+                    case Goal.Serve:
+                        // TODO: Create "Service" states machine
+                        break;
                     case Goal.Feed:
                     default:
                         if (!(_subMachine is FeedStateMachine<T>))
