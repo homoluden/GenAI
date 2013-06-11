@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenAI.Core", "GenAI.Core\GenAI.Core.csproj", "{B56BF38F-F907-4ABA-BAF6-0D15C01100FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B56BF38F-F907-4ABA-BAF6-0D15C01100FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56BF38F-F907-4ABA-BAF6-0D15C01100FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56BF38F-F907-4ABA-BAF6-0D15C01100FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56BF38F-F907-4ABA-BAF6-0D15C01100FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
