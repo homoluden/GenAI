@@ -9,7 +9,7 @@ using GenAI.Core.Interfaces;
     {
         #region Fields
 
-        private IHaveStates _subMachine;
+        protected IHaveStates _subMachine;
 
         #endregion
 

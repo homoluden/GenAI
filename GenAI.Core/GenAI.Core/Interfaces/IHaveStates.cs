@@ -8,7 +8,7 @@ namespace GenAI.Core.Interfaces
 {
     using GenAI.Core.Enums;
 
-    interface IHaveStates
+    public interface IHaveStates
     {
         EndState GetEndState();
 

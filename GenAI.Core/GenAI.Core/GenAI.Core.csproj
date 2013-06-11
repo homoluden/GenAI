@@ -42,12 +42,15 @@
     <Compile Include="BaseStateMachine.cs" />
     <Compile Include="Enums\EndState.cs" />
     <Compile Include="HighLevelStateMachine.cs" />
+    <Compile Include="IdleStateMachine.cs" />
     <Compile Include="Interfaces\IAmNoizy.cs" />
     <Compile Include="Interfaces\IAmSmelling.cs" />
     <Compile Include="Interfaces\IAmVisible.cs" />
     <Compile Include="Interfaces\IHaveStates.cs" />
     <Compile Include="LowLevelStateMachine.cs" />
+    <Compile Include="MainGoalStateMachine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="KamikazeStrategyStateMachine.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
