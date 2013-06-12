@@ -8,6 +8,7 @@ namespace GenAI.Core.Enums
 {
     public enum GeneKey
     {
+        Size,
         Health,
         Stamina,
         Speed,
@@ -16,7 +17,8 @@ namespace GenAI.Core.Enums
         RangedAttack,
         RangedAttackDistance,
         RangedDefence,
-        Strength,
+        Strength,        	
+        Cloaking,
         FeedGoalPriority,
         AttackGoalPriority,
         RetreatGoalPriority,

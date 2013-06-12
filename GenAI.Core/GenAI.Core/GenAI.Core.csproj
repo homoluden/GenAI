@@ -49,6 +49,7 @@
     <Compile Include="Enums\GeneKey.cs" />
     <Compile Include="Enums\Goal.cs" />
     <Compile Include="Enums\RetreatStrategy.cs" />
+    <Compile Include="Enums\Scent.cs" />
     <Compile Include="Enums\ServeStrategy.cs" />
     <Compile Include="HighLevelStateMachine.cs" />
     <Compile Include="FeedStateMachine.cs" />

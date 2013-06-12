@@ -13,13 +13,33 @@ namespace GenAI.Models
     public abstract class BaseCharacter
     {
         #region Fields
+        
+        uint _health;
+        uint _stamina;
+        uint _speed;
 
         #endregion
 
 
         #region Properties
+        
+        public Dictionary<GeneKey, uint> Genes { get; private set; }
+        
+        #region Base Specs
 
-        public uint Health { get; set; }
+        public uint Size
+        {
+            get
+            {
+                return Genes[GeneKey.Size];
+            }
+        }
+
+        public uint Health 
+        {
+            get { return _health; }
+            set { _health = Math.Min(value, MaxHealth); }
+        }
         public uint MaxHealth 
         { 
             get
@@ -28,7 +48,11 @@ namespace GenAI.Models
             } 
         }
 
-        public uint Stamina { get; set; }
+        public uint Stamina
+        {
+            get { return _stamina; }
+            set { _stamina = Math.Min(value, MaxHealth); }
+        }
         public uint MaxStamina
         {
             get
@@ -38,7 +62,11 @@ namespace GenAI.Models
         }
         
         public uint Strength { get; set; }
-        public uint Speed { get; set; }
+        public uint Speed
+        {
+            get { return _speed; }
+            set { _speed = Math.Min(value, MaxSpeed); }
+        }
         public uint MaxSpeed
         {
             get
@@ -46,18 +74,46 @@ namespace GenAI.Models
                 return Genes[GeneKey.Speed];
             }
         }
+
         public uint MeleeAttack { get; set; }
+        public uint MeleeAttackDistance { get; set; }
         public uint RangedAttack { get; set; }
         public uint RangedAttackDistance { get; set; }
         public uint MeleeDefence { get; set; }
         public uint RangedDefence { get; set; }
-        public Dictionary<GeneKey, uint> Genes { get; private set; }
+
+
+        #endregion // Base Specs
+        
+        #region IAmVisible
+
+        public virtual uint Food { get { return (uint)(2 * Size + Health); } }
+        public virtual uint Danger { get { return (uint)(2 * Size + Strength + Speed + MeleeAttack + 2*RangedAttack + 2*RangedAttackDistance); } }
+        public virtual uint Visibility { get { return (uint)(2 * Size + Genes[GeneKey.Cloaking]); } }
+
+        #endregion //IAmVisible
+
+        #region IHavePosition
 
         public double X { get; set; }
         public double Y { get; set; }
         public double Angle { get; set; }
 
-        #endregion
+        #endregion // IHavePosition
+
+        #region IAmSmelling
+
+        public virtual Scent Scent { get { return GenAI.Core.Enums.Scent.Neutral; } }
+
+        public virtual uint ScentStrength { get { return (uint)((2 * Size + Strength) / Genes[GeneKey.Cloaking]); } }
+
+        public virtual double GetDirection(IHavePosition fromOther) {
+            throw new NotImplementedException("BaseCharacter -> GetDirection is not implemented yet.");
+        }
+
+        #endregion // IAmSmelling
+
+        #endregion // Properties
 
 
         #region Ctors
@@ -77,6 +133,6 @@ namespace GenAI.Models
             RangedDefence = genes[GeneKey.RangedDefence];
         }
 
-        #endregion
+        #endregion // Ctors
     }
 }

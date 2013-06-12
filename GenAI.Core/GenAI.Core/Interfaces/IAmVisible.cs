@@ -8,5 +8,11 @@ namespace GenAI.Core.Interfaces
 {
     public interface IAmVisible
     {
+        uint Speed { get; }
+        uint Danger { get; }
+        uint MeleeDefence { get; }
+        uint RangedDefence { get; }
+        uint Food { get; }
+        uint Visibility { get; }        
     }
 }

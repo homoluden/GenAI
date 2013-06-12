@@ -76,6 +76,15 @@ namespace GenAI.Core
 
         #region Private Methods
 
+        protected Dictionary<Goal, int> CheckProfits(IEnumerable<IAmVisible> visibleObjects, IEnumerable<IAmNoizy> noizyObjects, IEnumerable<IAmSmelling> smellingObjects)
+        {
+            var profits = new Dictionary<Goal, int>();
+
+
+
+            return profits;
+        }
+
         protected void BuildGoalSelectionTable()
         {
             _goalSelectionTable = new[]

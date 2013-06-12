@@ -8,7 +8,7 @@ using GenAI.Core.Interfaces;
 
 namespace GenAI.Models
 {
-    public class ZergCharacter : BaseCharacter, IAmAlive, IHavePosition
+    public class ZergCharacter : BaseCharacter, IAmAlive, IHavePosition, IAmVisible, IAmSmelling
     {
         public ZergCharacter(Dictionary<GeneKey, uint> genes) : base(genes)
         {
