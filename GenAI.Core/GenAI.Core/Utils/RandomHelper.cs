@@ -9,12 +9,12 @@ namespace GenAI.Core.Utils
 {
     internal static class RandomHelper
     {
-        private static readonly DiscreteUniform _rnd = new DiscreteUniform(0, 1000);
+        public static readonly DiscreteUniform RND = new DiscreteUniform(0, 1000);
 
         public static int RouletteSelection(uint[] selectionTable)
         {
             var total = selectionTable[selectionTable.Length - 1];
-            uint randomSelection = (uint)_rnd.Sample() / 1000 * total;
+            uint randomSelection = (uint)RND.Sample() / 1000 * total;
             int idx = -1;
             int first = 0;
             int last = selectionTable.Length - 1;
