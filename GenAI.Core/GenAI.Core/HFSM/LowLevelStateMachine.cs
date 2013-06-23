@@ -11,13 +11,13 @@
     {
         #region Fields
 
-        private EndState _state = EndState.Idle;
+        private Action _state = Action.Idle;
 
         #endregion
 
         #region Properties
 
-        public EndState State { get; set; }
+        public Action State { get; set; }
 
         #endregion
 
@@ -29,7 +29,7 @@
 
         #endregion
 
-        public override EndState GetEndState()
+        public override Action GetEndState()
         {
             return _state;
         }

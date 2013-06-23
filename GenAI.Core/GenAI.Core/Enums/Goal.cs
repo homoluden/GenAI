@@ -13,4 +13,18 @@ namespace GenAI.Core.Enums
         Retreat,
         Serve
     }
+
+    public enum GoalTrigger 
+    { 
+        GoToFeed,
+        GoToFight,
+        FleeAway,
+        GoToWork,
+        DoSomething
+    }
+
+    public static class GoalHelper
+    {
+
+    }
 }

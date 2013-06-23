@@ -9,11 +9,18 @@ namespace GenAI.Models
     using GenAI.Core;
     using GenAI.Core.Enums;
     using GenAI.Core.Interfaces;
+using Stateless;
 
     public abstract class BaseCharacter
     {
+        #region Constants
+        public abstract static readonly Goal[] GOALS_LOOKUP_TABLE;
+        public abstract static readonly Dictionary<Goal, byte> GOAL_PRIORITIES;
+        #endregion
+
+
         #region Fields
-        
+
         uint _health;
         uint _stamina;
         uint _speed;
@@ -24,6 +31,8 @@ namespace GenAI.Models
         #region Properties
         
         public Dictionary<GeneKey, uint> Genes { get; private set; }
+
+        public abstract StateMachine<Goal, GoalTrigger> MainGoal { get; set; }
         
         #region Base Specs
 

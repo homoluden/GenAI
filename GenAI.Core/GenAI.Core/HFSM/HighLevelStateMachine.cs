@@ -23,7 +23,7 @@ using GenAI.Core.Interfaces;
 
         #endregion
 
-        public override EndState GetEndState()
+        public override Action GetEndState()
         {
             return _subMachine.GetEndState();
         }

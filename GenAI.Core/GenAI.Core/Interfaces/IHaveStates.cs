@@ -10,7 +10,7 @@ namespace GenAI.Core.Interfaces
 
     public interface IHaveStates
     {
-        EndState GetEndState();
+        SimpleAction GetEndState();
 
         void UpdateState(IEnumerable<IAmVisible> visibleObjects, IEnumerable<IAmNoizy> noizyObjects, IEnumerable<IAmSmelling> smellingObjects);
 

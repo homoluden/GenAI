@@ -13,4 +13,12 @@ namespace GenAI.Core.Enums
         Infantry,
         Kamikaze
     }
+
+    public enum AttackStrategyTrigger
+    {
+        LetsFindEnemy,
+        LetsBeCareful,
+        LetsJustFight,
+        LetsBlowItUp
+    }
 }

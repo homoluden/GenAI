@@ -27,7 +27,7 @@ namespace GenAI.Core
             _owner = owner;
         }
 
-        public abstract EndState GetEndState();
+        public abstract SimpleAction GetEndState();
 
         public abstract void UpdateState(IEnumerable<IAmVisible> visibleObjects, IEnumerable<IAmNoizy> noizyObjects, IEnumerable<IAmSmelling> smellingObjects);
     }

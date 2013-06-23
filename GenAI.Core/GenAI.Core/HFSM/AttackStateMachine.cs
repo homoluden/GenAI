@@ -10,7 +10,7 @@
 
         public AttackStateMachine(T owner) : base(owner)
         {
-            _subMachine = new LowLevelStateMachine<T>(owner){State = EndState.AggressiveChase};
+            _subMachine = new LowLevelStateMachine<T>(owner){State = SimpleAction.AggressiveChase};
         }
 
         #endregion
