@@ -7,15 +7,19 @@ using System.Threading.Tasks;
 namespace GenAI.Models
 {
     using GenAI.Core;
-    using GenAI.Core.Enums;
-    using GenAI.Core.Interfaces;
+using GenAI.Core.Enums;
+using GenAI.Core.Interfaces;
+using MathNet.Numerics.Distributions;
 using Stateless;
 
     public abstract class BaseCharacter
     {
         #region Constants
-        public abstract static readonly Goal[] GOALS_LOOKUP_TABLE;
-        public abstract static readonly Dictionary<Goal, byte> GOAL_PRIORITIES;
+
+        protected abstract static readonly Goal[] GOALS_LOOKUP_TABLE;
+        protected abstract static readonly Dictionary<Goal, byte> GOAL_PRIORITIES;
+        protected abstract static readonly DiscreteUniform RND;
+        
         #endregion
 
 
