@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GenAI.Core.Enums;
 using GenAI.Core.Interfaces;
+using GenAI.Models.Helpers;
 using Stateless;
 using MathNet.Numerics.Distributions;
 
@@ -14,15 +15,21 @@ namespace GenAI.Models
     {
         #region Constants
 
-        protected static readonly Goal[] GOALS_LOOKUP_TABLE;
-        protected static readonly Dictionary<Goal, byte> GOAL_PRIORITIES;
-        protected static readonly DiscreteUniform RND;
+        public static readonly Goal[] GOALS_LOOKUP_TABLE;
+        public static readonly Dictionary<Goal, byte> GOAL_PRIORITIES;
+        public static readonly DiscreteUniform RND;
 
         #endregion
 
-        public static ZergCharacter()
+        #region Properties
+        
+        #endregion
+
+        #region Ctors
+
+        static ZergCharacter()
         {
-            GOAL_PRIORITIES = new Dictionary<Goal, byte> (){ 
+            GOAL_PRIORITIES = new Dictionary<Goal, byte>(){ 
                 {Goal.Attack, 16},
                 {Goal.Feed, 8},
                 {Goal.Retreat, 1},
@@ -53,43 +60,29 @@ namespace GenAI.Models
             }
         }
 
-        public ZergCharacter(Dictionary<GeneKey, uint> genes) : base(genes)
+        public ZergCharacter(Dictionary<GeneKey, uint> genes)
+            : base(genes)
         {
             X = Y = Angle = 0.0;
 
-            MainGoal = new StateMachine<Goal, GoalTrigger>(Goal.Serve);
-
-            MainGoal.Configure(Goal.Serve).
-                PermitReentry(GoalTrigger.GoToWork).
-                Permit(GoalTrigger.GoToFeed, Goal.Feed).
-                Permit(GoalTrigger.FleeAway, Goal.Retreat).
-                Permit(GoalTrigger.GoToFight, Goal.Attack).
-
-                PermitDynamic(GoalTrigger.DoSomething, () => GOALS_LOOKUP_TABLE[RND.Sample()]);
-
-            MainGoal.Configure(Goal.Feed).
-                PermitReentry(GoalTrigger.GoToFeed).
-                Permit(GoalTrigger.FleeAway, Goal.Retreat).
-                Permit(GoalTrigger.GoToFight, Goal.Attack).
-                Permit(GoalTrigger.GoToWork, Goal.Serve).
-
-                PermitDynamic(GoalTrigger.DoSomething,() => GOALS_LOOKUP_TABLE[RND.Sample()]);
-
-            MainGoal.Configure(Goal.Retreat).
-                PermitReentry(GoalTrigger.FleeAway).
-                Permit(GoalTrigger.GoToFeed, Goal.Feed).
-                Permit(GoalTrigger.GoToFight, Goal.Attack).
-                Permit(GoalTrigger.GoToWork, Goal.Serve).
-
-                PermitDynamic(GoalTrigger.DoSomething, () => GOALS_LOOKUP_TABLE[RND.Sample()]);
-
-            MainGoal.Configure(Goal.Attack).
-                PermitReentry(GoalTrigger.GoToFight).
-                Permit(GoalTrigger.GoToFeed, Goal.Feed).
-                Permit(GoalTrigger.FleeAway, Goal.Retreat).
-                Permit(GoalTrigger.GoToWork, Goal.Serve).
-
-                PermitDynamic(GoalTrigger.DoSomething, () => GOALS_LOOKUP_TABLE[RND.Sample()]);
+            this.ConfigureStates(Goal.Serve);
         }
+
+        #endregion
+
+
+        #region Private Methods
+
+        #endregion
+
+
+        #region Public Methods
+
+        public override void Update(float dt)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

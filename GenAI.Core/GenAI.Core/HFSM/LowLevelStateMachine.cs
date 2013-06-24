@@ -11,13 +11,13 @@
     {
         #region Fields
 
-        private Action _state = Action.Idle;
+        private SimpleAction _state = SimpleAction.Idle;
 
         #endregion
 
         #region Properties
 
-        public Action State { get; set; }
+        public SimpleAction State { get; set; }
 
         #endregion
 
@@ -29,7 +29,7 @@
 
         #endregion
 
-        public override Action GetEndState()
+        public override SimpleAction GetEndState()
         {
             return _state;
         }

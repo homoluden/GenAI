@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseCharacter.cs" />
+    <Compile Include="Helpers\ZergHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ZergCharacter.cs" />
   </ItemGroup>

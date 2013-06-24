@@ -13,16 +13,7 @@ using MathNet.Numerics.Distributions;
 using Stateless;
 
     public abstract class BaseCharacter
-    {
-        #region Constants
-
-        protected abstract static readonly Goal[] GOALS_LOOKUP_TABLE;
-        protected abstract static readonly Dictionary<Goal, byte> GOAL_PRIORITIES;
-        protected abstract static readonly DiscreteUniform RND;
-        
-        #endregion
-
-
+    {        
         #region Fields
 
         uint _health;
@@ -36,7 +27,7 @@ using Stateless;
         
         public Dictionary<GeneKey, uint> Genes { get; private set; }
 
-        public abstract StateMachine<Goal, GoalTrigger> MainGoal { get; set; }
+        public StateMachine<Goal, GoalTrigger> MainGoal { get; set; }
         
         #region Base Specs
 
@@ -147,5 +138,12 @@ using Stateless;
         }
 
         #endregion // Ctors
+
+
+        #region Private Methods
+
+        public abstract void Update(float dt);
+
+        #endregion
     }
 }
