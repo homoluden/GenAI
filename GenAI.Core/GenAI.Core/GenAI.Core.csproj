@@ -45,27 +45,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HFSM\BaseStateMachine.cs" />
     <Compile Include="Enums\AttackStrategy.cs" />
     <Compile Include="Enums\SimpleAction.cs" />
     <Compile Include="Enums\FeedStrategy.cs" />
     <Compile Include="Enums\GeneKey.cs" />
-    <Compile Include="Enums\Goal.cs" />
+    <Compile Include="Enums\State.cs" />
     <Compile Include="Enums\RetreatStrategy.cs" />
     <Compile Include="Enums\Scent.cs" />
     <Compile Include="Enums\ServeStrategy.cs" />
-    <Compile Include="HFSM\HighLevelStateMachine.cs" />
-    <Compile Include="HFSM\FeedStateMachine.cs" />
     <Compile Include="Interfaces\IAmAlive.cs" />
     <Compile Include="Interfaces\IAmNoizy.cs" />
     <Compile Include="Interfaces\IAmSmelling.cs" />
     <Compile Include="Interfaces\IAmVisible.cs" />
     <Compile Include="Interfaces\IHavePosition.cs" />
     <Compile Include="Interfaces\IHaveStates.cs" />
-    <Compile Include="HFSM\LowLevelStateMachine.cs" />
-    <Compile Include="HFSM\MainGoalStateMachine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="HFSM\AttackStateMachine.cs" />
     <Compile Include="Utils\RandomHelper.cs" />
     <Compile Include="Utils\Vector3.cs" />
   </ItemGroup>

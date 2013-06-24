@@ -27,7 +27,7 @@ using Stateless;
         
         public Dictionary<GeneKey, uint> Genes { get; private set; }
 
-        public StateMachine<Goal, GoalTrigger> MainGoal { get; set; }
+        public StateMachine<State, Trigger> MainGoal { get; set; }
         
         #region Base Specs
 

@@ -15,8 +15,8 @@ namespace GenAI.Models
     {
         #region Constants
 
-        public static readonly Goal[] GOALS_LOOKUP_TABLE;
-        public static readonly Dictionary<Goal, byte> GOAL_PRIORITIES;
+        public static readonly State[] GOALS_LOOKUP_TABLE;
+        public static readonly Dictionary<State, byte> GOAL_PRIORITIES;
         public static readonly DiscreteUniform RND;
 
         #endregion
@@ -29,16 +29,16 @@ namespace GenAI.Models
 
         static ZergCharacter()
         {
-            GOAL_PRIORITIES = new Dictionary<Goal, byte>(){ 
-                {Goal.Attack, 16},
-                {Goal.Feed, 8},
-                {Goal.Retreat, 1},
-                {Goal.Serve, 2}
+            GOAL_PRIORITIES = new Dictionary<State, byte>(){ 
+                {State.AttackGoal, 16},
+                {State.FeedGoal, 8},
+                {State.RetreatGoal, 1},
+                {State.ServeGoal, 2}
             };
 
-            var goals = new Stack<Goal>();
+            var goals = new Stack<State>();
 
-            var goalEnums = (Goal[])Enum.GetValues(typeof(Goal));
+            var goalEnums = (State[])Enum.GetValues(typeof(State));
             foreach (var enumValue in goalEnums)
             {
                 for (int i = 0; i < GOAL_PRIORITIES[enumValue]; i++)
@@ -49,7 +49,7 @@ namespace GenAI.Models
 
             int count = goals.Count;
             RND = new DiscreteUniform(0, count - 1);
-            GOALS_LOOKUP_TABLE = new Goal[count];
+            GOALS_LOOKUP_TABLE = new State[count];
 
             var rnd = new ContinuousUniform(0.0, 1.0);
 
@@ -65,7 +65,7 @@ namespace GenAI.Models
         {
             X = Y = Angle = 0.0;
 
-            this.ConfigureStates(Goal.Serve);
+            this.ConfigureStates(State.ServeGoal);
         }
 
         #endregion
