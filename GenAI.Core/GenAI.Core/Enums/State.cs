@@ -95,18 +95,21 @@ namespace GenAI.Core.Enums
 
 
         #region Retreat Goal - Hide
-
+        Hide,
+        // + "Common Actions":
+        // IdleAction
         #endregion // Retreat Goal - Hide
 
         #region Retreat Goal - RetreatSlowly
-
+        // + "Common Actions":
+        // IdleAction, MoveToBest, AttackLongRange
         #endregion // Retreat Goal - RetreatSlowly
 
         #region Retreat Goal - RunAway
-
+        // + "Common Actions":
+        // IdleAction, MoveRandom, MoveToClosest
         #endregion // Retreat Goal - RunAway
-
-
+        
         #endregion
     }
 
@@ -117,6 +120,7 @@ namespace GenAI.Core.Enums
         DoSomething,
 
         #endregion
+
 
         #region GoalTriggers
         
