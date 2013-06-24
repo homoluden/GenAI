@@ -51,8 +51,7 @@ namespace GenAI.Models.Helpers
 
                 PermitDynamic(Trigger.DoSomething, () => ZergCharacter.GOALS_LOOKUP_TABLE[ZergCharacter.RND.Sample()]);
 
-            machine.Configure(State.SeekStrategy).SubstateOf(State.ServeGoal).
-                PermitReentry();
+            machine.Configure(State.SeekStrategy).SubstateOf(State.ServeGoal);
         }
     }
 }

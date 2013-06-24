@@ -51,6 +51,8 @@ namespace GenAI.Core.Enums
         Eat,
         StepBack,
         Repare,
+        AttackShortRange,
+        AttackLongRange,
         
         #endregion // Common Actions
 
@@ -61,22 +63,18 @@ namespace GenAI.Core.Enums
         #endregion // Attack Goal - Find Enemy
 
         #region Attack Goal - BeCareful
-        AttackLongRange,
         // + "Common Actions":
-        // MoveToClosest, StepBack, Repare
+        // MoveToClosest, StepBack, Repare, AttackLongRange
         #endregion // Attack Goal - BeCareful
 
         #region Attack Goal - JustFight
-        AttackShortRange,
-        AttackMiddleRange,
         // + "Common Actions":
-        // MoveToBest, StepBack, Repare
+        // MoveToBest, StepBack, Repare, AttackShortRange, AttackLongRange
         #endregion // Attack Goal - JustFight
 
         #region Attack Goal - BlowItUp
-        AttackShortRange
         // + "Common Actions":
-        // MoveToBest
+        // MoveToBest, AttackShortRange
         #endregion // Attack Goal - BlowItUp
 
 
